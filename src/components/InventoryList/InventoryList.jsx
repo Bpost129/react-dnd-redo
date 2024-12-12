@@ -1,6 +1,7 @@
-const InventoryList = ({ inventory }) => {
+const InventoryList = ({ title, inventory }) => {
   return (
-    <>
+    <div className="inventory-list">
+      <h2>{title}</h2>
       <ul>
         {inventory.map(item => (
           <li key={item._id}>
@@ -10,7 +11,7 @@ const InventoryList = ({ inventory }) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
