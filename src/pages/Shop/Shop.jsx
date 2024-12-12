@@ -5,21 +5,26 @@ import "./Shop.css"
 
 const Shop = () => {
   const [shopInventory, setShopInventory] = useState(inventoryData)
-  const [userInventory, setUserInventory] = useState([{ _id: 62555, name: 'Magic Wand', cost: 1, weight: 2 }])
+  const [userInventory, setUserInventory] = useState([])
 
-  const handleAddItem = () => {
-    const newItem = { _id: 62555, name: 'Magic Wand', cost: 1, weight: 2 }
-    setUserInventory([newItem, ...shopInventory])
+
+  const handleAddItem = (item) => {
+    setUserInventory([...userInventory, item])
+    setShopInventory(shopInventory.filter(el => el._id !== item._id))
   }
-  // console.log('Inventory Data:', inventoryData)
+
+  const handleRemoveItem = (item) => {
+    setShopInventory([...shopInventory, item])
+    setUserInventory(userInventory.filter(el => el._id !== item._id))
+  }
 
   return (
     <>
       <h1>Shop</h1>
       {/* <button onClick={handleAddItem}>Click Here</button> */}
       <section className="shop-section">
-        <InventoryList title="Shop Inventory" inventory={shopInventory} />
-        <InventoryList title="User Inventory" inventory={userInventory} />
+        <InventoryList title="Shop Inventory" inventory={shopInventory} handleAddItem={handleAddItem} />
+        <InventoryList title="User Inventory" inventory={userInventory} handleRemoveItem={handleRemoveItem} />
       </section>
     </>
   )

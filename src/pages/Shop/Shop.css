@@ -7,25 +7,15 @@
 
 .shop-section > div {
   min-width: 450px;
-
-
-  border: 2px inset rgb(241, 241, 165);
-  border-radius: 8px;
+  padding: 10px;
 }
 
 .shop-section h2 {
   text-align: center;
 }
 
-.shop-section li {
-  margin: 20px 0;
-}
-
-.shop-section p:first-child {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.shop-section p {
-  margin: 5px 0;
+.shop-section button {
+  padding: 6px;
+  margin-left: 10px;
+  background-color: rgb(161, 17, 45);
 }

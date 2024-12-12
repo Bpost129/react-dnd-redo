@@ -1,4 +1,6 @@
-const InventoryList = ({ title, inventory }) => {
+import "./InventoryList.css"
+
+const InventoryList = ({ title, inventory, handleAddItem, handleRemoveItem }) => {
   return (
     <div className="inventory-list">
       <h2>{title}</h2>
@@ -8,6 +10,11 @@ const InventoryList = ({ title, inventory }) => {
             <p>{item.name}</p>
             <p>Price: ${item.cost}</p>
             <p>Weight: {item.weight} lb</p>
+
+            {handleAddItem 
+              ? <button onClick={() => handleAddItem(item)}>Add Item</button>
+              : <button onClick={() => handleRemoveItem(item)}>Remove Item</button> 
+            }
           </li>
         ))}
       </ul>
