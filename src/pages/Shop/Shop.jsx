@@ -1,6 +1,7 @@
 import { useState } from "react"
 import InventoryList from "../../components/InventoryList/InventoryList"
 import { inventoryData } from "../../data/data"
+import "./Shop.css"
 
 const Shop = () => {
   const [shopInventory, setShopInventory] = useState(inventoryData)
@@ -16,7 +17,7 @@ const Shop = () => {
     <>
       <h1>Shop</h1>
       {/* <button onClick={handleAddItem}>Click Here</button> */}
-      <section>
+      <section className="shop-section">
         <InventoryList title="Shop Inventory" inventory={shopInventory} />
         <InventoryList title="User Inventory" inventory={userInventory} />
       </section>
