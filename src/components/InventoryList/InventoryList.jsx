@@ -1,11 +1,12 @@
-const InventoryList = ({ inventoryData }) => {
+const InventoryList = ({ inventory }) => {
   return (
     <>
       <ul>
-        {inventoryData.map(item => (
+        {inventory.map(item => (
           <li key={item._id}>
             <p>{item.name}</p>
             <p>Price: ${item.cost}</p>
+            <p>Weight: {item.weight} lb</p>
           </li>
         ))}
       </ul>
