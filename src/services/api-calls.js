@@ -10,7 +10,7 @@ export async function getMonster(monsterId) {
   return res.json()
 }
 
-export async function getSpellList() {
+export async function getSpells() {
   const res = await fetch(`${baseUrl}/api/spells`)
   return res.json()
 }
