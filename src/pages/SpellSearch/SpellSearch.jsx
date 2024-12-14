@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import SearchForm from "../../components/SearchForm/SearchForm"
+import SpellCard from "../../components/SpellCard/SpellCard"
 import { getSpells } from "../../services/api-calls"
 
 const SpellSearch = () => {
@@ -26,15 +27,9 @@ const SpellSearch = () => {
     <main className="spell-list">
       <h1>Many Spellz</h1>
       <SearchForm handleSpellSearch={handleSpellSearch} />
-      {searchResults.length ?
-        <h2>{searchResults.length} results found</h2>
-        :
-        <h2>Please search for a spell</h2>
-      }
+      {<h2>{searchResults.length} results found</h2>}
       {searchResults.map(spell => 
-        <div key={spell._id} className="link-container">
-          {spell.name}
-        </div>
+        <SpellCard key={spell._id} spell={spell} />
       )}
     </main>
   )

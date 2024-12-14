@@ -14,3 +14,8 @@ export async function getSpells() {
   const res = await fetch(`${baseUrl}/api/spells`)
   return res.json()
 }
+
+export async function getSpellDetails(spellId) {
+  const res = await fetch(`${baseUrl}/api/spells/${spellId}`)
+  return res.json()
+}
